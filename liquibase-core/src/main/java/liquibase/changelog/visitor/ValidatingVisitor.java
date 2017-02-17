@@ -79,12 +79,12 @@ public class ValidatingVisitor implements ChangeSetVisitor {
             for (RanChangeSet ranChangeSet : ranIndex.values()) {
                 if (ranChangeSet.getId().equalsIgnoreCase(changeSet.getId())) {
                     if (ranChangeSet.getAuthor().equalsIgnoreCase(changeSet.getAuthor())) {
-                        String changeSetPath = normalizePath(changeSet.getFilePath());
-                        String ranChangeSetPath = normalizePath(ranChangeSet.getChangeLog());
-                        if (ranChangeSetPath.equalsIgnoreCase(changeSetPath)
-                            || ranChangeSetPath.endsWith(changeSetPath) || changeSetPath.endsWith(ranChangeSetPath)) {
+//                        String changeSetPath = normalizePath(changeSet.getFilePath());
+//                        String ranChangeSetPath = normalizePath(ranChangeSet.getChangeLog());
+//                        if (ranChangeSetPath.equalsIgnoreCase(changeSetPath)
+//                            || ranChangeSetPath.endsWith(changeSetPath) || changeSetPath.endsWith(ranChangeSetPath)) {
                             result = ranChangeSet;
-                        }
+//                        }
                     }
                 }
             }

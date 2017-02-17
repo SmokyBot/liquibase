@@ -25,9 +25,9 @@ public class RemoveChangeSetRanStatusGenerator extends AbstractSqlGenerator<Remo
 
         return SqlGeneratorFactory.getInstance().generateSql(new DeleteStatement(database.getLiquibaseCatalogName(), database.getLiquibaseSchemaName(), database.getDatabaseChangeLogTableName())
                 .setWhere(database.escapeObjectName("ID", Column.class) + " = ? " +
-                        "AND " + database.escapeObjectName("AUTHOR", Column.class) + " = ? " +
-                        "AND " + database.escapeObjectName("FILENAME", Column.class) + " = ?")
-                .addWhereParameters(changeSet.getId(), changeSet.getAuthor(), changeSet.getFilePath())
+                        "AND " + database.escapeObjectName("AUTHOR", Column.class) + " = ? "
+                        )//+ "AND " + database.escapeObjectName("FILENAME", Column.class) + " = ?")
+                .addWhereParameters(changeSet.getId(), changeSet.getAuthor())//, changeSet.getFilePath())
                 , database);
     }
 }

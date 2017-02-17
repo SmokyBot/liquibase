@@ -36,7 +36,7 @@ public class AfterTagChangeSetFilter implements ChangeSetFilter {
     }
 
     private String changeLogToString(String id, String author, String changeLog) {
-        return id+":"+author+":"+changeLog;
+        return id+":"+author;//+":"+changeLog;
     }
 
     @Override

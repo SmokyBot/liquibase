@@ -28,9 +28,9 @@ public class UpdateChangeSetChecksumGenerator extends AbstractSqlGenerator<Updat
         runStatement = new UpdateStatement(database.getLiquibaseCatalogName(), database.getLiquibaseSchemaName(), database.getDatabaseChangeLogTableName())
                 .addNewColumnValue("MD5SUM", changeSet.generateCheckSum().toString())
                 .setWhereClause(database.escapeObjectName("ID", Column.class) + " = ? " +
-                        "AND " + database.escapeObjectName("AUTHOR", Column.class) + " = ? " +
-                        "AND " + database.escapeObjectName("FILENAME", Column.class) + " = ?")
-                .addWhereParameters(changeSet.getId(), changeSet.getAuthor(), changeSet.getFilePath());
+                        "AND " + database.escapeObjectName("AUTHOR", Column.class) + " = ? "
+                        )//+ "AND " + database.escapeObjectName("FILENAME", Column.class) + " = ?")
+                .addWhereParameters(changeSet.getId(), changeSet.getAuthor());//, changeSet.getFilePath());
 
         return SqlGeneratorFactory.getInstance().generateSql(runStatement, database);
     }

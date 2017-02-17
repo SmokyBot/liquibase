@@ -68,8 +68,8 @@ public class ShouldRunChangeSetFilter implements ChangeSetFilter {
 
     protected boolean changeSetsMatch(ChangeSet changeSet, RanChangeSet ranChangeSet) {
         return idsAreEqual(changeSet, ranChangeSet)
-                && authorsAreEqual(changeSet, ranChangeSet)
-                && pathsAreEqual(changeSet, ranChangeSet);
+                && authorsAreEqual(changeSet, ranChangeSet);
+//                && pathsAreEqual(changeSet, ranChangeSet);
     }
 
     protected boolean idsAreEqual(ChangeSet changeSet, RanChangeSet ranChangeSet) {
